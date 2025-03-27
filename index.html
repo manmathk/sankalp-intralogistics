@@ -261,6 +261,61 @@
         font-size: 1.5rem;
       }
 
+      /* About Page Specific Styles */
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+      }
+
+      .value-item {
+        text-align: center;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+      }
+
+      .value-item h4 {
+        color: #00a8e1;
+        font-size: 1.1rem;
+      }
+
+      @media (max-width: 768px) {
+        .grid-container {
+          grid-template-columns: 1fr;
+        }
+
+        .values-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Leadership Section Styles */
+      .leader-profile {
+        transition: transform 0.3s;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .leader-profile:hover {
+        transform: translateY(-5px);
+      }
+
+      @media (max-width: 768px) {
+        .leader-profile {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .leader-photo img {
+          width: 150px;
+          height: 150px;
+        }
+
+        .experience {
+          text-align: left;
+        }
+      }
+
       /* Mobile Styles */
       @media (max-width: 768px) {
         .nav-links {
@@ -309,12 +364,19 @@
     <!-- Header -->
     <header>
       <nav class="nav-container">
-        <div class="logo">Sankalp Intralogistics</div>
+        <div class="logo">
+          <img
+            style="width: 100px; height: 50px"
+            src="images/sankalp-logo.png"
+            alt=" Sankalp Intralogistics"
+          />
+        </div>
         <div class="nav-links">
           <a href="#home">Home</a>
           <a href="#services">Services</a>
           <a href="#industries">Industries</a>
           <a href="#projects">Projects</a>
+          <a href="#about">About us</a>
           <a href="#contact">Contact</a>
         </div>
         <div class="mobile-menu">☰</div>
@@ -384,6 +446,260 @@
         <div class="project-item">
           <img src="images/industries.jpg" alt="Project 3" />
         </div>
+      </div>
+    </section>
+
+    <!-- about us -->
+    <section class="section" id="about">
+      <h2 class="section-title">About Sankalp Intralogistics</h2>
+
+      <div
+        class="about-content"
+        style="max-width: 1000px; margin: 0 auto 3rem auto"
+      >
+        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem">
+          At Sankalp Intralogistics, we are dedicated to transforming material
+          handling and intralogistics solutions with innovation, efficiency, and
+          reliability. As an authorized dealer for Godrej Material Handling, we
+          provide industry-leading equipment, automation, and customized
+          solutions to optimize warehouse and logistics operations.
+        </p>
+
+        <div
+          class="grid-container"
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+          "
+        >
+          <div
+            class="mission-vision"
+            style="background: #f8f9fa; padding: 2rem; border-radius: 8px"
+          >
+            <div class="mission" style="margin-bottom: 2rem">
+              <h3 style="color: #00a8e1; margin-bottom: 1rem">Our Mission</h3>
+              <p>
+                To deliver state-of-the-art, high-quality Material Handling
+                Equipment (MHE) solutions that enhance efficiency, drive
+                productivity, and provide lasting value through exceptional
+                service, comprehensive after-sales support, and a commitment to
+                sustainable growth.
+              </p>
+            </div>
+            <div class="vision">
+              <h3 style="color: #00a8e1; margin-bottom: 1rem">Our Vision</h3>
+              <p>
+                To set the benchmark in the MHE sector for exceptional service,
+                innovative solutions, and long-term customer satisfaction,
+                empowering businesses to thrive and grow.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="values"
+            style="
+              background: #002d62;
+              color: white;
+              padding: 2rem;
+              border-radius: 8px;
+            "
+          >
+            <h3 style="color: #00a8e1; margin-bottom: 1.5rem">Our Values</h3>
+            <div class="values-grid" style="display: grid; gap: 1.5rem">
+              <div class="value-item">
+                <i
+                  class="fas fa-users"
+                  style="color: #00a8e1; margin-bottom: 0.5rem"
+                ></i>
+                <h4 style="margin-bottom: 0.5rem">Customer-Centric Approach</h4>
+                <p style="font-size: 0.95rem">
+                  We prioritize our clients' needs and strive to exceed
+                  expectations
+                </p>
+              </div>
+              <div class="value-item">
+                <i
+                  class="fas fa-handshake"
+                  style="color: #00a8e1; margin-bottom: 0.5rem"
+                ></i>
+                <h4 style="margin-bottom: 0.5rem">Integrity & Trust</h4>
+                <p style="font-size: 0.95rem">
+                  Honesty, transparency, and ethical business practices
+                </p>
+              </div>
+              <div class="value-item">
+                <i
+                  class="fas fa-lightbulb"
+                  style="color: #00a8e1; margin-bottom: 0.5rem"
+                ></i>
+                <h4 style="margin-bottom: 0.5rem">Innovation & Excellence</h4>
+                <p style="font-size: 0.95rem">
+                  Continuous adaptation to industry advancements
+                </p>
+              </div>
+              <div class="value-item">
+                <i
+                  class="fas fa-leaf"
+                  style="color: #00a8e1; margin-bottom: 0.5rem"
+                ></i>
+                <h4 style="margin-bottom: 0.5rem">Sustainability</h4>
+                <p style="font-size: 0.95rem">
+                  Eco-friendly solutions for a greener future
+                </p>
+              </div>
+              <div class="value-item">
+                <i
+                  class="fas fa-chart-line"
+                  style="color: #00a8e1; margin-bottom: 0.5rem"
+                ></i>
+                <h4 style="margin-bottom: 0.5rem">Collaboration & Growth</h4>
+                <p style="font-size: 0.95rem">
+                  Building strong relationships for mutual success
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add this after the Mission/Vision/Values section but before the Partner section -->
+        <div class="leadership-section" style="margin: 4rem 0">
+          <h3 style="text-align: center; color: #002d62; margin-bottom: 2rem">
+            Our Leadership
+          </h3>
+
+          <div
+            class="leadership-content"
+            style="max-width: 1000px; margin: 0 auto"
+          >
+            <p style="text-align: center; margin-bottom: 2rem">
+              At Sankalp Intralogistics, we are driven by a leadership team with
+              deep expertise in material handling, logistics, and business
+              management. With a vision to revolutionize the intralogistics
+              industry, our leaders bring years of experience, strategic
+              thinking, and a customer-first approach to delivering world-class
+              solutions.
+            </p>
+
+            <div
+              class="leader-profile"
+              style="
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                gap: 2rem;
+                align-items: center;
+                background: #f8f9fa;
+                padding: 2rem;
+                border-radius: 8px;
+              "
+            >
+              <div class="leader-photo" style="text-align: center">
+                <img
+                  src="leader-placeholder.jpg"
+                  alt="Mr. Mangesh Kapale"
+                  style="
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                  "
+                />
+              </div>
+              <div class="leader-info">
+                <h4 style="color: #00a8e1; margin-bottom: 0.5rem">
+                  Mr. Mangesh Kapale
+                </h4>
+                <p
+                  style="font-weight: 600; margin-bottom: 1rem; color: #002d62"
+                >
+                  Founder, Sankalp Intralogistics
+                </p>
+                <p style="margin-bottom: 1rem">
+                  With extensive experience in the material handling industry,
+                  Mr. Mangesh Kapale has played a key role in optimizing
+                  logistics operations and driving business growth.
+                </p>
+                <div
+                  class="experience"
+                  style="
+                    background: rgba(0, 168, 225, 0.1);
+                    padding: 1rem;
+                    border-radius: 5px;
+                  "
+                >
+                  <p style="font-size: 0.95rem">
+                    <i
+                      class="fas fa-briefcase"
+                      style="color: #00a8e1; margin-right: 0.5rem"
+                    ></i>
+                    Formerly with Godrej Material Handling<br />
+                    <i
+                      class="fas fa-certificate"
+                      style="color: #00a8e1; margin-right: 0.5rem"
+                    ></i>
+                    15+ years industry experience
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="partner-section"
+          style="
+            text-align: center;
+            border-top: 2px solid #00a8e1;
+            padding-top: 2rem;
+          "
+        >
+          <h3 style="color: #002d62; margin-bottom: 1rem">
+            Authorized Godrej Partner
+          </h3>
+          <p style="max-width: 800px; margin: 0 auto">
+            As a trusted dealer for Godrej Material Handling, Sankalp
+            Intralogistics brings world-class material handling solutions to
+            businesses, ensuring seamless intralogistics operations with
+            quality, efficiency, and exceptional service.
+          </p>
+          <img
+            src="godrej-partner-badge.png"
+            alt="Godrej Authorized Partner"
+            style="width: 150px; margin: 2rem auto"
+          />
+        </div>
+      </div>
+
+      <div
+        class="cta-banner"
+        style="
+          background: #002d62;
+          color: white;
+          text-align: center;
+          padding: 3rem;
+          border-radius: 8px;
+        "
+      >
+        <h3 style="margin-bottom: 1rem; color: #00a8e1">
+          Let's Build the Future Together
+        </h3>
+        <p style="margin-bottom: 1.5rem">
+          Transform your logistics operations with our innovative solutions
+        </p>
+        <a
+          href="#contact"
+          class="cta-button"
+          style="
+            background: #00a8e1;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+          "
+          >Contact Us Now</a
+        >
       </div>
     </section>
 
