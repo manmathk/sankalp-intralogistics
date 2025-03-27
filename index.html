@@ -1,36 +1,486 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sankalp Intralogistics</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sankalp Intralogistics - Comprehensive Warehouse Automation Solutions"
+    />
+    <title>Sankalp Intralogistics - Smart Warehouse Solutions</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      /* Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
 
-<header>
-    <div class="logo">Sankalp Intralogistics</div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="solutions.html">Solutions</a></li>
-            <li><a href="industries.html">Industries</a></li>
-            <li><a href="case-studies.html">Case Studies</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-    </nav>
-</header>
+      html {
+        scroll-behavior: smooth;
+      }
 
-<section class="hero">
-    <h1>Innovating Intralogistics for a Smarter Future</h1>
-    <p>We provide cutting-edge automation and storage solutions for your business.</p>
-    <a href="solutions.html" class="btn">Explore Solutions</a>
-</section>
+      body {
+        line-height: 1.6;
+        color: #333;
+      }
 
-<footer>
-    <p>&copy; 2025 Sankalp Intralogistics. All Rights Reserved.</p>
-</footer>
+      /* Header */
+      header {
+        background: #fff;
+        padding: 1rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
 
-</body>
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #004a8d;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: #004a8d;
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("warehouse-bg.jpg") center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        padding: 0 1rem;
+        margin-top: 60px;
+      }
+
+      .hero-content {
+        max-width: 800px;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background: #004a8d;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 2rem;
+        transition: background 0.3s;
+      }
+
+      /* Sections Common Styles */
+      .section {
+        padding: 5rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section h2 {
+        text-align: center;
+        margin-bottom: 3rem;
+        font-size: 2.5rem;
+        color: #004a8d;
+      }
+
+      /* Services Grid */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .service-card {
+        background: #f9f9f9;
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.3s;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .service-icon {
+        font-size: 2.5rem;
+        color: #004a8d;
+        margin-bottom: 1rem;
+      }
+
+      /* Industries Section */
+      .industry-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .industry-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        height: 300px;
+      }
+
+      .industry-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+      }
+
+      .industry-card:hover img {
+        transform: scale(1.1);
+      }
+
+      .industry-overlay {
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 74, 141, 0.8);
+        color: white;
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      /* Projects Gallery */
+      .project-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+      }
+
+      .project-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        aspect-ratio: 16/9;
+      }
+
+      .project-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Contact Section */
+      .contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+
+      .contact-info {
+        background: #f9f9f9;
+        padding: 2rem;
+        border-radius: 10px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      .contact-form button {
+        background: #004a8d;
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      /* Footer */
+      footer {
+        background: #1a1a1a;
+        color: white;
+        padding: 4rem 2rem;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .footer-section h3 {
+        color: #004a8d;
+        margin-bottom: 1rem;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-links a {
+        color: white;
+        font-size: 1.5rem;
+      }
+
+      /* Mobile Styles */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: white;
+          flex-direction: column;
+          padding: 1rem;
+          text-align: center;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .mobile-menu {
+          display: block;
+          font-size: 1.5rem;
+          cursor: pointer;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .contact-container {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .social-links {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav class="nav-container">
+        <div class="logo">Sankalp Intralogistics</div>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#industries">Industries</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="mobile-menu">☰</div>
+      </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Smart Warehouse Solutions</h1>
+        <p>Transform your logistics operations with cutting-edge automation</p>
+        <a href="#contact" class="cta-button">Get Started</a>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fas fa-robot service-icon"></i>
+          <h3>Warehouse Automation</h3>
+          <p>Automated storage and retrieval systems</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-conveyor-belt service-icon"></i>
+          <h3>Material Handling</h3>
+          <p>Advanced conveyor systems and sortation solutions</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-cogs service-icon"></i>
+          <h3>System Integration</h3>
+          <p>Seamless integration of logistics operations</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="section" id="industries">
+      <h2>Industries We Serve</h2>
+      <div class="industry-grid">
+        <div class="industry-card">
+          <img src="ecommerce-warehouse.jpg" alt="E-commerce" />
+          <div class="industry-overlay">E-commerce</div>
+        </div>
+        <div class="industry-card">
+          <img src="pharma-warehouse.jpg" alt="Pharmaceutical" />
+          <div class="industry-overlay">Pharmaceutical</div>
+        </div>
+        <div class="industry-card">
+          <img src="manufacturing-warehouse.jpg" alt="Manufacturing" />
+          <div class="industry-overlay">Manufacturing</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+      <h2>Our Projects</h2>
+      <div class="project-gallery">
+        <div class="project-item">
+          <img src="project1.jpg" alt="Project 1" />
+        </div>
+        <div class="project-item">
+          <img src="project2.jpg" alt="Project 2" />
+        </div>
+        <div class="project-item">
+          <img src="project3.jpg" alt="Project 3" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <h2>Contact Us</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> 123 Industrial Park, Mumbai,
+            India
+          </p>
+          <p><i class="fas fa-phone"></i> +91 12345 67890</p>
+          <p>
+            <i class="fas fa-envelope"></i> contact@sankalpintralogistics.com
+          </p>
+          <div class="map-container">
+            <iframe
+              src="https://maps.google.com/maps?q=mumbai&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="300"
+              style="border: 0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <form class="contact-form">
+          <input type="text" placeholder="Name" required />
+          <input type="email" placeholder="Email" required />
+          <input type="tel" placeholder="Phone" />
+          <textarea rows="5" placeholder="Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Sankalp Intralogistics</h3>
+          <p>Pioneers in smart warehouse solutions since 2010</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2023 Sankalp Intralogistics. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenu = document.querySelector(".mobile-menu");
+      const navLinks = document.querySelector(".nav-links");
+
+      mobileMenu.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      // Smooth scrolling
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+          navLinks.classList.remove("active");
+        });
+      });
+
+      // Form Submission
+      document
+        .querySelector(".contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Add your form submission logic here
+          alert("Thank you for your message! We will contact you soon.");
+          this.reset();
+        });
+    </script>
+  </body>
 </html>
